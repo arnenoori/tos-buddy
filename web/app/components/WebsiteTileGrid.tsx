@@ -1,12 +1,20 @@
 import Link from 'next/link';
 import { WebsiteRow } from '~/types/websites';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
+import { useEffect, useState } from 'react';
 
 export default function WebsiteTileGrid({
   websites,
 }: {
   websites: WebsiteRow[];
 }) {
+  // Add client-side only rendering for hover effects
+  const [isMounted, setIsMounted] = useState(false);
+  
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <ul role="list" className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {websites.map((website) => (
@@ -39,15 +47,16 @@ export default function WebsiteTileGrid({
               <p className="text-md text-gray-900 mb-4">
                 {website.website_description || 'No description available'}
               </p>
-              <div className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <a
-                  href={`/${website.site_name}`}
-                  className="relative inline-flex w-full items-center justify-center gap-x-3 rounded-lg border border-transparent py-4 text-sm font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200"
-                >
-                  <ArrowRightIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                  Go to Summary
-                </a>
-              </div>
+              {isMounted && (
+                <div className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span
+                    className="relative inline-flex w-full items-center justify-center gap-x-3 rounded-lg border border-transparent py-4 text-sm font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200"
+                  >
+                    <ArrowRightIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                    Go to Summary
+                  </span>
+                </div>
+              )}
             </a>
           </Link>
         </li>
