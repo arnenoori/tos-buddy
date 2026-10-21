@@ -2,7 +2,7 @@
 // Handles the main crawling functionality, orchestrating the different parts of the API.
 import { PlaywrightCrawler, RequestQueue } from 'crawlee';
 import axios from 'axios';
-import { processContent } from './summarization';
+import { processContent } from '~/lib/summarization';
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
 import { WebsiteRow } from '~/types/websites';

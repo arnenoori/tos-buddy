@@ -29,19 +29,19 @@
     "cors": "^2.8.5",
     "crawlee": "next",
     "dotenv": "^16.4.5",
-    "eslint-config-next": "15.1.2",
+    "eslint-config-next": "15.5.28",
     "framer-motion": "^11.1.5",
     "imagemagick": "^0.1.3",
     "marked": "^12.0.1",
-    "next": "15.2.8",
+    "next": "15.5.28",
     "next-plausible": "^3.12.0",
     "next-themes": "^0.3.0",
     "openai": "^4.47.1",
     "playwright": "^1.43.1",
     "playwright-aws-lambda": "^0.10.0",
     "punycode": "^2.3.1",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "react": "19.0.9",
+    "react-dom": "19.0.9",
     "sass": "^1.75.0",
     "tailwind-merge": "^2.2.2",
     "use-debounce": "^10.0.0"
@@ -65,7 +65,7 @@
     "tailwindcss-radix": "^3.0.3",
     "typescript": "^5.4.5",
     "eslint": "^8.56.0",
-    "sharp": "0.33.1"
+    "sharp": "0.35.5"
   },
   "overrides": {
     "@types/react": "19.0.2",
